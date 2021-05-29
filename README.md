@@ -13,15 +13,16 @@
 下载完成后，一直点击下一步即可完成安装
 
 打开程序开始菜单，输入`cmd`
-![下载文件](source/cmd_pos.png)
+![cmd](source/cmd_pos.png)
 
 在命令提示符中输入python
-![下载文件](source/python_test.png)
+![python_test](source/python_test.png)
 
 回车后出现以下界面即安装成功
-![下载文件](source/wins_python_view.png)
+![python_view](source/wins_python_view.png)
 
 输入`exit()`后回车即可退出页面
+
 **mac安装python**
 
 打开终端输入命令
