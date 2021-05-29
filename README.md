@@ -8,18 +8,18 @@
 点击[下载地址](https://www.python.org/downloads/release/python-382/)
 进入python官方网站，拉到最下方选择`Windows x86-64 executable installer` 进行下载
 
-![下载文件](source/下载地址.png)
+![下载文件](source/download.png)
 
 下载完成后，一直点击下一步即可完成安装
 
 打开程序开始菜单，输入`cmd`
-![下载文件](source/cmd打开位置.png)
+![下载文件](source/cmd_pos.png)
 
 在命令提示符中输入python
-![下载文件](source/python测试.png)
+![下载文件](source/python_test.png)
 
 回车后出现以下界面即安装成功
-![下载文件](source/wins_python界面.png)
+![下载文件](source/wins_python_view.png)
 
 输入`exit()`后回车即可退出页面
 **mac安装python**
