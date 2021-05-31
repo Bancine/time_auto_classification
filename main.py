@@ -3,6 +3,7 @@ import openpyxl as pyxl
 import re
 import sys
 
+
 def update_excel(file_path):
     """
     输出文件
@@ -27,12 +28,13 @@ def update_excel(file_path):
         sys.stdout.flush()
 
         # 获取分类信息
-        my_classify = find_class(item[0].value,time_dict=time_dict)
-        if my_classify:
-            # print(my_classify)
-            ws["B" + str(item[0].row)] = my_classify['大类']
-            ws["C" + str(item[0].row)] = my_classify['小类']
-            ws["D" + str(item[0].row)] = my_classify['明细类']
+        if item[0].value :
+            my_classify = find_class(item[0].value,time_dict=time_dict)
+            if my_classify:
+                # print(my_classify)
+                ws["B" + str(item[0].row)] = my_classify['大类']
+                ws["C" + str(item[0].row)] = my_classify['小类']
+                ws["D" + str(item[0].row)] = my_classify['明细类']
     print("\n保存中...")
     wb.save(filename=file_path)
 
@@ -85,7 +87,10 @@ def find_class(record,time_dict):
         if regular:
             # print(time_dict[3][i])
             pattern = re.compile(time_dict[3][i])
-            re_result = pattern.findall(record)
+            try:
+                re_result = pattern.findall(record)
+            except Exception as e:
+                print(e)
             if re_result:
                 find_result['data'] = record
                 find_result['大类'] = time_dict[0][i]
@@ -101,7 +106,7 @@ def find_class(record,time_dict):
 
 
 if __name__ == '__main__':
-    # file_path = r"C:\Users\Bancine\Desktop\时间统计法原表个人版1.xlsx"
+    # file_path = r"/Users/bancine/OneDrive/Documents/时间统计法原表邦胜.xlsx"
     file_path = sys.argv[1]
     print("执行开始".center(50 // 2, "-"))
     update_excel(file_path)
